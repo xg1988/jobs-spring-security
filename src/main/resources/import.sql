@@ -1,0 +1,1 @@
+insert into userdto values ('test@test.com', '테스트', 'test', 'test');
