@@ -22,3 +22,12 @@ spring:
       ddl-auto: create
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  thymeleaf:
+    prefix: classpath:templates/thymeleaf/
+    check-template-location: true
+    suffix: .html
+    mode: HTML
+    cache: false
+logging:
+  level:
+    root: INFO

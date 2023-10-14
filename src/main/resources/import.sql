@@ -1,1 +1,2 @@
-insert into userdto values ('test@test.com', '테스트', 'test', 'test');
+insert into user_info values ('admin',	'user@user.com'	,'조성욱'	,'$2a$10$2rX4SQDRz2QYk21sKEgxcurxHJVgtDvk0TQ94L4FwXEmXqLYvPZq.'	,'ADMIN');
+insert into user_info values ('user','user@user.com	','유저'	,'$2a$10$WbrPl9PUWwvJci8pZzkqX.Y.xTL6WNBv0MOMIZd5JTh7t732EO8B2'	,'USER');

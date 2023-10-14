@@ -1,13 +1,20 @@
 package com.jobs.springsecurity.common.config;
 
-import lombok.Data;
+import lombok.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 
-@Data
+import lombok.Data;
+
+@Getter
+@ToString
+@Slf4j
 public class UserSecurityDto implements UserDetails {
 
     private final UserDto userDto;
@@ -17,7 +24,17 @@ public class UserSecurityDto implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        Collection<GrantedAuthority> collect = new ArrayList<>();
+        collect.add(new GrantedAuthority() { //GrantedAuthority를 Collection안에 담기
+            @Override
+            public String getAuthority() {
+                log.info("userDto.getRole() >> {}", userDto.getRole());
+                return userDto.getRole(); //여기서 역할 뽑기
+            }
+        });
+        return collect;
+
+
     }
 
     @Override

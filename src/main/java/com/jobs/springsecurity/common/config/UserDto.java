@@ -12,7 +12,7 @@ import javax.persistence.Id;
 @Getter
 @Builder
 @ToString
-@Entity
+@Entity(name="user_info")
 public class UserDto {
 
     @Id
