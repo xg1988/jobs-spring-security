@@ -61,7 +61,7 @@ public class LoginService implements UserDetailsService {
         try{
             userDto = userDtoRepository.findById(username).orElseThrow(NullPointerException::new);
         }catch (NullPointerException e){
-            e.printStackTrace();
+            throw e;
         }
 
         UserSecurityDto userSecurityDto = new UserSecurityDto(userDto);
